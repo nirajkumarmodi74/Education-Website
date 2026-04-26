@@ -33,57 +33,10 @@ bars.addEventListener("click", () => {
 
 // ------------------HEADER-----------------
 
-// const webinar = [
-//   {
-//     img: "../IMAGES/Web development webinar.png",
-//     title: "Upcoming Webinars",
-//     learn: "Learn AI & Web Development",
-//     date: "Wednesday, April 15, 2023",
-//     time: "6:00 PM",
-//     description:
-//       "Join us for an exciting webinar on AI and Web Development! Discover the latest trends, tools, and techniques in the world of web development powered by artificial intelligence. Whether you're a student, developer, or tech enthusiast, this webinar is your gateway to mastering the future of web technology.",
-//     points1: "Learn key strategies",
-//     points2: "Get expert insights",
-//     points3: "Practical tips for students",
-//   },
-//   {
-//     img: "https://www.cmu.edu/education/images/https://th.bing.com/th/id/OIP.pdH9MYJr3JF0Bu4ptoBAhQHaEK?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3-1.jpg",
-//     title: "How to Apply to CMU",
-//     date: "Wednesday, September 20, 2023",
-//     time: " 6:00 PM EDT",
-//     description:
-//       "Join us for an informative webinar about the application process for undergraduate admissions to Carnegie Mellon University.",
-//     points1: "Understand the complete application process",
-//     points2: "Tips to build a strong profile",
-//     points3: "Insights into holistic admission review",
-//   },
-//   {
-//     img: "https://tse3.mm.bing.net/th/id/OIP.eDe1myTbwL7H3nYB85bsegHaE3?rs=1&pid=ImgDetMain&o=7&rm=3",
-//     title: "Financial Aid and Scholarships at CMU",
-//     date: "Thursday, October 5, 2023",
-//     time: " 7:00 PM EDT",
-//     description:
-//       "Explore financial aid options and scholarship opportunities available at Carnegie Mellon University.",
-//     points1: "Learn how to apply for financial aid",
-//     points2: "Types of scholarships explained",
-//     points3: "Maximize your funding opportunities",
-//   },
-//   {
-//     img: "https://snworksceo.imgix.net/cml/308e722a-0a0a-4e32-8994-be87cbd3cb77.sized-1000x1000.jpg?w=800",
-//     title: "Student Life at CMU",
-//     date: "Tuesday, October 17, 2023",
-//     time: " 5:00 PM EDT",
-//     description:
-//       "Discover student life, clubs, and activities at Carnegie Mellon University.",
-//     points1: "Explore clubs and organizations",
-//     points2: "Hear real student experiences",
-//     points3: "Get involved in campus life",
-//   },
-// ];
 
 const webinar = [
   {
-    img: "../IMAGES/Web development webinar.png",
+    img: "IMAGES/Web development webinar.png",
     title: "Upcoming Webinars",
     learn: "Learn AI & Modern Web Development",
     date: "Wednesday, April 15, 2023",
