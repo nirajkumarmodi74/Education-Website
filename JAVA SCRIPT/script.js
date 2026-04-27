@@ -1,4 +1,4 @@
-// ------------------HEADER-----------------
+
 
 const searchicon = document.querySelector(".headersearchicon");
 const headerinput = document.querySelector(".headerinput");
@@ -13,28 +13,20 @@ searchicon.addEventListener("click", () => {
 });
 
 const bars = document.querySelector("#headerbars");
-console.log(bars);
-const navlinks = document.querySelector("#navlinks");
-
+const navlinks = document.querySelector("#navlinksmob");
 const secondlinks = document.querySelector(".secondlinks");
-
+const footer = document.querySelector(".footer");
+const allContent = document.querySelector("#allcontents");
 bars.addEventListener("click", () => {
-  if (navlinks.style.display === "flex") {
-    navlinks.style.display = "none";
-  } else {
-    navlinks.style.display = "flex";
-  }
-  if (secondlinks.style.display === "flex") {
-    secondlinks.style.display = "none";
-  } else {
-    secondlinks.style.display = "flex";
-  }
+  navlinks.classList.toggle("second");
+  secondlinks.classList.toggle("secondactive");
+  allContent.classList.toggle("allcontents")
 });
 
 // ------------------HEADER-----------------
 
 
-const webinar = [
+const webinarData = [
   {
     img: "IMAGES/Web development webinar.png",
     title: "Upcoming Webinars",
@@ -85,13 +77,13 @@ const webinar = [
   },
 ];
 
-function displayWebinars(e) {
-  const webinarConatianer = document.querySelector(".webinar-container");
-  webinarConatianer.innerHTML = "";
-  const item = webinar[e];
-  const webinarDiv = document.createElement("div");
-  webinarDiv.classList.add("hero-section");
-  webinarDiv.innerHTML = `
+
+const webinarConatianer = document.querySelector(".webinar-container");
+function displayWebinars(){
+  const alldataHTML = webinarData.map((item, index)=>{
+    const isActive = index===0?"active":"";
+    return `
+      <div class="hero-section ${isActive}" id="webinar-${index}">
         <div class="hero-text">
           <h1 class="">
             <i class="fa-solid fa-rocket" style="color: #1e3a8a"></i>${item.title}
@@ -119,47 +111,44 @@ function displayWebinars(e) {
             alt="${item.title}"
           />
         </div>
-        `;
-  webinarConatianer.appendChild(webinarDiv);
+      </div>
+    `
+  }).join("");
+  webinarConatianer.innerHTML = alldataHTML;
 }
+displayWebinars();
+
 let currentindexwebinar = 0;
-displayWebinars(currentindexwebinar);
+const allHeroSections = document.querySelectorAll(".hero-section");
 
-function nextwebinar() {
-  currentindexwebinar++;
-  if (currentindexwebinar >= webinar.length) {
-    currentindexwebinar = 0;
-  }
-  displayWebinars(currentindexwebinar);
+function showNextWebinar(){
+  const current = allHeroSections[currentindexwebinar];
+  current.classList.remove("active");
+  current.classList.add("no-anim");
+  current.offsetHeight;
+
+  current.classList.remove("no-anim");
+  currentindexwebinar = (currentindexwebinar+1)%webinarData.length;
+
+  allHeroSections[currentindexwebinar].classList.add("active");
 }
 
-function previouswebinar() {
-  currentindexwebinar--;
-  if (currentindexwebinar < 0) {
-    currentindexwebinar = webinar.length - 1;
-  }
-  displayWebinars(currentindexwebinar);
-}
-
-setInterval(() => {
-  nextwebinar();
-}, 2000);
-
+setInterval(showNextWebinar,2000);
 // -----------------------------RANKING SECTION-----------------------------
 
 const Ranking = [
   {
-    img: "../IMAGES/Global universtiy(MIT).png",
+    img: "IMAGES/Global universtiy(MIT).png",
     title: "#1 Global University",
     description: "(QS World University Rankings, 2026)",
   },
   {
-    img: "../IMAGES/Global universtiy(MIT).png",
+    img: "IMAGES/Global universtiy(MIT).png",
     title: "#1 Master's in Computer Science",
     description: "(QS World University Rankings, 2026)",
   },
   {
-    img: "../IMAGES/Global universtiy(MIT).png",
+    img: "IMAGES/Global universtiy(MIT).png",
     title: "#1 Engineering School",
     description: "(QS World University Rankings, 2026)",
   },
@@ -402,5 +391,5 @@ function placedStudent(e){
   });
 };
 
-// placedStudent();
+
 placedStudent(placementDetails);
