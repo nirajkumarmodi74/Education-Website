@@ -6,6 +6,10 @@
     <title>Research and Education</title>
     <link
       rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    />
+    <link
+      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
       integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
       crossorigin="anonymous"
@@ -60,15 +64,15 @@
     </nav>
     <div class="secondlinks">
       <span><a href="">ABOUT</a></span>
-      <span><a href="">EDUCATION</a></span>
+      <span><a href="HTML/education.html">EDUCATION</a></span>
       <span><a href="">ADDMISSIONS</a></span>
       <span><a href="">EXPERIMENTAL LEARNING</a></span>
       <span><a href="">STUDENT EXPERIENCE</a></span>
       <span><a href="">EMPLOYEMENT OUTCOMES</a></span>
       <span><a href="">DIRECTORY</a></span>
     </div>
-    <section id="allcontents">
-      <section class="webinar-container">
+    <main id="allcontents">
+      <section class="webinar-container reveal">
         <div class="hero-text">
           <h1 class="">
             <i class="fa-solid fa-rocket" style="color: #1e3a8a"></i> Upcoming
@@ -98,7 +102,7 @@
         </div>
         <div class="hero-image">
           <img
-            src="../IMAGES/Web development webinar.png"
+            src="IMAGES/Web development webinar.png"
             alt="Upcoming Webinar"
           />
         </div>
@@ -106,7 +110,7 @@
 
       <!---------------------------------BIG VALUE PREPOSITION SECOND SECTION------------------->
 
-      <section class="big-value">
+      <section class="big-value reveal">
         <div class="big-value-bgimg">
           <div>
             <h2 class="text-[28px] text-white font-bold">
@@ -116,7 +120,7 @@
           <button class="big-value-applybutton">Apply</button>
         </div>
       </section>
-      <section class="scm-section">
+      <section class="scm-section reveal">
         <div class="scm-container">
           <div class="scm-left">
             <h1>SCM Program</h1>
@@ -140,7 +144,9 @@
           </div>
         </div>
       </section>
-      <section class="ranking-section flex justify-evenly items-start gap-8">
+      <section
+        class="ranking-section reveal flex justify-evenly items-start gap-8"
+      >
         <div class="ranking-container flex flex-col gap-6"></div>
         <div
           class="ranking-about text-gray-700 flex flex-col gap-4 flex-wrap w-[40%]"
@@ -163,7 +169,7 @@
 
       <!-- -----------------------SCM VALUES---------------------------- -->
 
-      <section class="scm-values flex">
+      <section class="scm-values reveal flex">
         <div class="scmvalues-img">
           <div><img src="IMAGES/SCM Values.png" alt="" /></div>
         </div>
@@ -204,7 +210,7 @@
       </section>
 
       <!-- ----------------------SCM VS MBA------------------ -->
-      <section class="scmvsmba">
+      <section class="scmvsmba reveal">
         <div class="scmvsmbacontent">
           <div>
             <div class="flex item-center justify-center text-[24px] font-bold">
@@ -252,7 +258,7 @@
           </div>
         </div>
       </section>
-      <section class="abtcareer">
+      <section class="abtcareer reveal">
         <div class="careerout">
           <h2 class="text-[24px] text-white text-center font-bold">
             CLIMB YOUR CAREER LADDER STEP BY STEP
@@ -277,7 +283,7 @@
           </p>
         </div>
       </section>
-      <section class="placementdetails">
+      <section class="placementdetails reveal">
         <h2 class="text-center font-bold text-[24px]">Our Placement</h2>
         <div class="carousel-wrapper">
           <div class="careerpics">
@@ -285,7 +291,7 @@
           </div>
         </div>
       </section>
-      <section class="diversity">
+      <section class="diversity reveal">
         <div class="diversity-img">
           <img src="IMAGES/SCM Values.png" alt="" srcset="" />
         </div>
@@ -301,7 +307,7 @@
           </p>
         </div>
       </section>
-      <section class="programfeat">
+      <section class="programfeat reveal">
         <div class="programfeatcontent">
           <h2 class="text-[24px] font-bold">Key Features of SCM Retail</h2>
           <p class="text-[18px] w-[60vw]">
@@ -345,7 +351,7 @@
           </div>
         </div>
       </section>
-      <section class="featscmb">
+      <section class="featscmb reveal">
         <h2 class="text-[24px] font-bold">Program Feat SCMb</h2>
         <div>
           <img
@@ -363,7 +369,7 @@
           </p>
         </div>
       </section>
-      <section class="featmmx">
+      <section class="featmmx reveal">
         <div class="mmxcontent">
           <h2 class="text-[24px] font-bold">Program Feat MMx</h2>
           <p class="text-[18px]">
@@ -382,7 +388,7 @@
           />
         </div>
       </section>
-      <section class="featscale">
+      <section class="featscale reveal">
         <div class="featmmximg">
           <img
             src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40"
@@ -401,11 +407,11 @@
           </p>
         </div>
       </section>
-    </section>
-    <footer class="footer">
+    </main>
+    <footer class="footer ">
       <div class="footer-content">
         <div class="footer-brand">
-          <img src="IMAGES/3.png" alt="Logo" />
+          <a href="index.html"><img src="IMAGES/3.png" alt="Logo" /></a>
           <p>Empowering education with smart digital learning solutions.</p>
         </div>
 
@@ -433,7 +439,18 @@
         </div>
       </div>
     </footer>
-
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+    integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    ></script>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+    integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    ></script>
     <script src="JAVA SCRIPT/script.js"></script>
   </body>
 </html>

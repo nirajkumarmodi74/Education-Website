@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   /* max-width: 1600px; */
+  /* scroll-behavior: smooth; */
 }
 
 img:hover{
