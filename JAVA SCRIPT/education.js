@@ -159,50 +159,47 @@ expandBtn.addEventListener("click", () => {
   }
 });
 
-const cards = document.querySelectorAll(".card-container");
+const scmrInner = document.getElementById("scmr-card-inner");
+const scmrBtn = document.getElementById("scmr-btn-trigger");
 
-cards.forEach((card) => {
-  const triggerBtn = card.querySelector(".js-flip-trigger");
-  const cardInner = card.querySelector(".card-inner");
-  const btnText = card.querySelector(".btn-text");
-  const plusIcon = card.querySelector(".plus-icon-large");
+const scmrText = scmrBtn.querySelector(".btn-text");
+const scmrIcon = scmrBtn.querySelector(".plus-icon-large");
 
-  // Track unique flip state for each card
-  let isFlipped = false;
+let isFlipped2 = false;
 
-  triggerBtn.addEventListener("click", () => {
-    if (!isFlipped) {
-      const tl = gsap.timeline();
-      tl.to(".card-inner", {
-        scale: 0.5,
-        rotationY: 180,
-        duration: 0.6,
-        ease: "power2.inOut",
-      }).to(".card-inner", {
-        scale: 1,
-        duration: 0.3,
-      });
+scmrBtn.addEventListener("click", () => {
+  if (!isFlipped2) {
+    const tl = gsap.timeline();
+    tl.to(scmrInner, {
+      scale: 0.85,
+      rotationY: 180,
+      duration: 0.5,
+      ease: "power2.inOut",
+    }).to(scmrInner, {
+      scale: 1,
+      duration: 0.3,
+      ease: "power2.out"
+    });
 
-      btnText.textContent = "collapse";
-      plusIcon.textContent = "-";
-      isFlipped = true;
-    } else {
-      gsap
-        .timeline()
-        .to(".card-inner", {
-          scale: 0.5,
-          rotationY: 0,
-          duration: 0.6,
-          ease: "power2.inOut",
-        })
-        .to(".card-inner", {
-          scale: 1,
-          duration: 0.3,
-        });
+    scmrText.textContent = "collapse";
+    scmrIcon.textContent = "-";
+    isFlipped2 = true;
 
-      btnText.textContent = "expand";
-      plusIcon.textContent = "+";
-      isFlipped = false;
-    }
-  });
+  } else {
+    const tl = gsap.timeline();
+    tl.to(scmrInner, {
+      scale: 0.85,
+      rotationY: 0,
+      duration: 0.5,
+      ease: "power2.inOut",
+    }).to(scmrInner, {
+      scale: 1,
+      duration: 0.3,
+      ease: "power2.out"
+    });
+
+    scmrText.textContent = "expand";
+    scmrIcon.textContent = "+";
+    isFlipped2 = false;
+  }
 });
