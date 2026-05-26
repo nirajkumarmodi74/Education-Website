@@ -403,7 +403,294 @@ th {
   font-size: 22px;
   font-weight: 500;
 }
+/* -----------CURRICULUM-SECTION----- */
 
+.curriculum-container-large {
+    max-width: auto; 
+    margin: 0 auto;
+    padding: 40px 24px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #83b9ef;
+}
+
+.main-title-large {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 60px;
+    color: #002957;
+    letter-spacing: -1px;
+}
+
+/* Sections spacing */
+.curriculum-section-large {
+    margin-bottom: 90px;
+}
+
+.intro-block-large {
+    display: flex;
+    gap: 45px;
+    margin-bottom: 40px;
+    align-items: flex-start;
+}
+
+.spotlight-card {
+    flex-shrink: 0;
+    width: 320px;  /* Size increased from 240px */
+    height: 200px; /* Size increased from 160px */
+    background-color: #05386c;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    box-shadow: inset 0 0 0 2000px rgba(5, 56, 108, 0.15), 0 4px 12px rgba(0,0,0,0.05); 
+}
+
+
+.text-content-large h2 {
+    font-size: 2.3rem; /* Size increased from 1.9rem */
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #05386c;
+    letter-spacing: -0.5px;
+}
+
+.text-content-large p {
+    font-size: 1.1rem; /* Highly readable body text */
+    color: #3d3d3d;
+    line-height: 1.75;
+}
+/* Card Container setup for 3D Perspective */
+.card-container {
+    perspective: 1200px;
+    position: relative;
+}
+
+.card-inner {
+    width: 100%;
+    
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+
+.card-front, .card-back {
+    backface-visibility: hidden;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.card-back {
+    position: absolute;
+    transform: rotateY(180deg);
+}
+.infographic-container-large {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.infographic-box-large {
+    width: 100%; 
+    height: 380px; 
+    color: #05386c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 40px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 2px dashed rgba(5, 56, 108, 0.3);
+}
+
+
+.expand-btn-large {
+    background-color: #1d87f1;
+  padding: 1vw;
+  border: 0px solid #000;
+  border-radius: 1rem;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.expand-btn-large:hover {
+    color: #002957;
+}
+
+.expand-btn-large:hover .plus-icon-large {
+    border-color: #002957;
+    transform: scale(1.1);
+}
+
+.plus-icon-large {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #1d87f1;
+    border-radius: 50%;
+    font-size: 1rem;
+    padding-bottom: 3px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Container Layout */
+.phd-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 60px 24px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Big Bold Main Title using Deep Navy (#002957) */
+.phd-main-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #002957;
+    margin-bottom: 40px;
+    letter-spacing: -1.5px;
+}
+
+/* Card Wrapper with light accent background for better contrast */
+.phd-content-card {
+    background-color: #ffffff;
+    border-left: 5px solid #05386c; /* Elegant academic left accent border */
+    padding: 40px;
+    border-radius: 0 12px 12px 0;
+    box-shadow: 0 10px 30px rgba(5, 56, 108, 0.04);
+    transition: transform 0.3s ease;
+}
+
+.phd-content-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Text Wrapper Layout */
+.phd-text-wrapper {
+    max-width: 900px; /* Restricting width makes long paragraphs easier to read */
+    margin-bottom: 30px;
+}
+
+/* Sub-heading using Slate Blue (#05386c) */
+.phd-sub-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #05386c;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+}
+
+/* Description Text */
+.phd-description {
+    font-size: 1.15rem;
+    color: #4a5568;
+    line-height: 1.8;
+}
+
+/* Action Area Centering */
+.phd-action-area {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Expand Button Powered by Electric Blue (#1d87f1) */
+.phd-expand-btn {
+    background: none;
+    border: none;
+    color: #1d87f1;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: all 0.2s ease-in-out;
+}
+
+.phd-expand-btn:hover {
+    color: #002957; /* Hover changes back to Deep Navy */
+    background-color: rgba(29, 135, 241, 0.06); /* Very soft blue background pill on hover */
+}
+
+.phd-expand-btn:hover .phd-plus-icon {
+    border-color: #002957;
+    background-color: #002957;
+    color: #ffffff;
+}
+
+/* Interactive Round Plus Icon */
+.phd-plus-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #1d87f1;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    padding-bottom: 2px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .phd-container {
+        padding: 40px 16px;
+    }
+
+    .phd-main-title {
+        font-size: 2.8rem;
+        margin-bottom: 25px;
+    }
+
+    .phd-content-card {
+        padding: 25px 20px;
+    }
+
+    .phd-sub-title {
+        font-size: 1.6rem;
+    }
+
+    .phd-description {
+        font-size: 1.05rem;
+        line-height: 1.7;
+    }
+}
+/* Responsive Handling */
+@media (max-width: 900px) {
+    .intro-block-large {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .spotlight-card {
+        width: 100%;
+        height: 220px;
+    }
+
+    .infographic-box-large {
+        height: 280px;
+    }
+    
+    .main-title-large {
+        font-size: 2.5rem;
+    }
+}
 @media (max-width: 992px) {
 
   .thirdlink{

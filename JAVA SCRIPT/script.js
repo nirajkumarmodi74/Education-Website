@@ -1,37 +1,4 @@
-const reveals = document.querySelectorAll(".reveal");
 
-reveals.forEach((elem) => {
-
-  gsap.set(elem, {
-    y: 100,
-    opacity: 0
-  });
-
-  const observer = new IntersectionObserver((entries) => {
-
-    entries.forEach((entry) => {
-
-      if(entry.isIntersecting){
-
-        gsap.to(entry.target, {
-          y: 0,
-          opacity: 1,
-          duration: 0.5,
-          ease: "power3.out"
-        });
-
-        observer.unobserve(entry.target);
-      }
-
-    });
-
-  }, {
-    threshold: 0
-  });
-
-  observer.observe(elem);
-
-});
 const searchicon = document.querySelector(".headersearchicon");
 const headerinput = document.querySelector(".headerinput");
 

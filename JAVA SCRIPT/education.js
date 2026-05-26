@@ -9,8 +9,6 @@ bars.addEventListener("click", () => {
   allContent.classList.toggle("allcontents");
 });
 
-// const expLearning = [
-//   {
 //     img: "https://images.openai.com/static-rsc-4/4JuNIDlDts-zs1VwP_3imYZvWzSsBrSKC9tsC4tf6z0D9D20sjDweRE17pbXpvz4gtz5VmY4d1S8C4SCpRUnk_HUAaEiqwgr6EwGnpLk4WpqRLw01cm0C6TTB9aRBe3Y4ZUltneHWEaYslKhPJRku_sPtUURYSisoajl5wLbaKE?purpose=inline",
 //     head: "Global Study Trek",
 //     descp:
@@ -67,13 +65,14 @@ const expLearning = [
     descp:
       "Develop leadership and decision-making skills through expert-led workshops, networking sessions, interactive discussions, and collaborative activities designed to enhance communication, confidence, and professional growth. Participate in engaging training sessions, leadership simulations, and mentorship opportunities that prepare you to manage teams effectively and excel in dynamic corporate environments.",
     button: "Discover Workshops",
-  }
+  },
 ];
 const expContent = document.querySelector(".exp-main-content");
-function displayExp(){
-  const allData = expLearning.map((item, index)=>{
-    const isActive = index===0?"active":"";
-    return `
+function displayExp() {
+  const allData = expLearning
+    .map((item, index) => {
+      const isActive = index === 0 ? "active" : "";
+      return `
       <div class="exp-content ${isActive} " id="exp-container-${index}" >
         <div class="exp-contents" >
             <div class="exp-img">
@@ -94,8 +93,9 @@ function displayExp(){
           </div>
         </div>
       </div>
-    `
-  }).join("");
+    `;
+    })
+    .join("");
   expContent.innerHTML = allData;
 }
 
@@ -105,18 +105,104 @@ let currentExpIndex = 0;
 const allExpContent = document.querySelectorAll(".exp-content");
 // console.log(allExpContent);
 
-function showExp(){
+function showExp() {
   const current = allExpContent[currentExpIndex];
   current.classList.remove("active");
   current.classList.add("exit");
   current.offsetHeight;
-  currentExpIndex = (currentExpIndex+1)%expLearning.length;
+  currentExpIndex = (currentExpIndex + 1) % expLearning.length;
   allExpContent[currentExpIndex].classList.add("active");
-  setTimeout(()=>{
+  setTimeout(() => {
     current.classList.remove("exit");
-  },3000);
-
+  }, 3000);
 }
 
+setInterval(showExp, 3000);
 
-setInterval(showExp,3000);
+const expandBtn = document.getElementById("js-expand-btn");
+const cardContainer = document.getElementById("js-infographic-card");
+const btnText = expandBtn.querySelector("text") || expandBtn; // falls back to button text
+
+let isFlipped = false;
+
+expandBtn.addEventListener("click", () => {
+  if (!isFlipped) {
+    const tl = gsap.timeline();
+    tl.to(".card-inner", {
+      scale: 0.5,
+      rotationY: 180,
+      duration: 0.6,
+      ease: "power2.inOut",
+    }).to(".card-inner", {
+      scale: 1,
+      duration: 0.3,
+    });
+
+    expandBtn.innerHTML = '<span class="plus-icon-large">-</span> collapse';
+    isFlipped = true;
+  } else {
+    gsap
+      .timeline()
+      .to(".card-inner", {
+        scale: 0.5,
+        rotationY: 0,
+        duration: 0.6,
+        ease: "power2.inOut",
+      })
+      .to(".card-inner", {
+        scale: 1,
+        duration: 0.3,
+      });
+
+    expandBtn.innerHTML = '<span class="plus-icon-large">+</span> expand';
+    isFlipped = false;
+  }
+});
+
+const cards = document.querySelectorAll(".card-container");
+
+cards.forEach((card) => {
+  const triggerBtn = card.querySelector(".js-flip-trigger");
+  const cardInner = card.querySelector(".card-inner");
+  const btnText = card.querySelector(".btn-text");
+  const plusIcon = card.querySelector(".plus-icon-large");
+
+  // Track unique flip state for each card
+  let isFlipped = false;
+
+  triggerBtn.addEventListener("click", () => {
+    if (!isFlipped) {
+      const tl = gsap.timeline();
+      tl.to(".card-inner", {
+        scale: 0.5,
+        rotationY: 180,
+        duration: 0.6,
+        ease: "power2.inOut",
+      }).to(".card-inner", {
+        scale: 1,
+        duration: 0.3,
+      });
+
+      btnText.textContent = "collapse";
+      plusIcon.textContent = "-";
+      isFlipped = true;
+    } else {
+      gsap
+        .timeline()
+        .to(".card-inner", {
+          scale: 0.5,
+          rotationY: 0,
+          duration: 0.6,
+          ease: "power2.inOut",
+        })
+        .to(".card-inner", {
+          scale: 1,
+          duration: 0.3,
+        });
+
+      btnText.textContent = "expand";
+      plusIcon.textContent = "+";
+      isFlipped = false;
+    }
+  });
+});
